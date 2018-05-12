@@ -1,0 +1,14 @@
+# Copies the contents of the id_rsa.pub file to your clipboard
+sudo apt-get install xclip
+xclip -sel clip < ~/.ssh/id_rsa.pub
+
+
+# Generating a new SSH key
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+
+# Start ssh agent
+eval "$(ssh-agent -s)"
+
+# Add your ssh private key
+ssh-add ~/.ssh/id_rsa
+
